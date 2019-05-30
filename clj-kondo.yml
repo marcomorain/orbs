@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  lint:
+    docker:
+      - image: 2019.05.27-alpha-SNAPSHOT
+    steps:
+      - checkout
+      - run:
+          name: Lint
+          command: clj-kondo --lint .
